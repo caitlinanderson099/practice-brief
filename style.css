@@ -1,6 +1,72 @@
-/* Global Reset */
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+
+header {
+    background-image: url(/img/puss-pop\(3\).webp);
+    padding: 100px 0;
+    text-align: center;
+
+    h1 {
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 3rem;
+    }
 }
+
+.filter-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100px;
+    background-color: #1f1f1f;
+    color: white;
+
+    .filter {
+        label {
+            font-size: 1.5rem;
+        }
+    }
+
+   select {
+    padding: 10px;
+    border-radius: 10px;
+   }
+}
+
+.sorting-container {
+    display: flex;
+    height: 100px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #1f1f1f;
+    color: white;
+
+    button {
+        padding: 10px;
+        border-radius: 10px;
+    }
+}
+
+
+
+#cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+
+    .card {
+        background-color: purple;
+        border: 2px solid blue;
+    }
+
+    img {
+        width: 100%;
+        object-fit: cover;
+        
+    }
+}
+
+.swiper {
+    width: 600px;
+    height: 300px;
+  }

@@ -1,13 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jQuery CSS Link -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.3/themes/smoothness/jquery-ui.css">
+    <!-- Swiper CSS Link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Custom CSS Link -->
     <link rel="stylesheet" href="/style.css">
     <title> Put It All Together Brief </title>
 </head>
+
 <body>
-    
+
+
+    <!-- info text -->
+    <header>
+        <h1> Pop Figures! </h1>
+    </header>
+
+    <!-- filter buttons -->
+    <div class="filter-container">
+
+        <!-- Company filter -->
+        <div class="filter">
+            <label for="company"> Company: </label>
+            <select name="company" id="company" class="full-width-select">
+                <!-- Options for the select as well as the value -->
+                <option value=""> All </option>
+                <option value="Disney"> Disney </option>
+                <option value="DreamWorks"> DreamWorks </option>
+                <option value="Pixar"> Pixar </option>
+            </select>
+        </div>
+
+
+         <!-- Franchise filter -->
+         <div class="filter">
+            <label for="franchise"> Franchise: </label>
+            <select name="franchise" id="franchise" class="full-width-select">
+                <!-- Options for the select as well as the value -->
+                <option value=""> All </option>
+                <option value="Disney"> The Little Mermaid </option>
+                <option value="DreamWorks"> Shrek </option>
+                <option value="Pixar"> Inside Out 2 </option>
+            </select>
+        </div>
+
+
+         <!-- third filter -->
+         <!-- <div class="filter">
+            <label for="franchise"> Franchise: </label>
+            <select name="franchise" id="franchise" class="full-width-select">
+                Options for the select as well as the value -->
+                <!-- <option value=""> All </option>
+                <option value="Disney"> The Little Mermaid </option>
+                <option value="DreamWorks"> Shrek </option>
+                <option value="Pixar"> Inside Out 2 </option>
+            </select>
+        </div> --> 
+
+    </div>
+
+
+
+    <!-- Sorting buttons -->
+     <div class="sorting-container">
+        <p> Sorting Options: </p>
+        <div class="sorting-btn-container">
+            <button class="sorting-button" id="price-high-to-low-btn">$$$ - $</button>
+            <button class="sorting-button" id="price-low-to-high-btn">$ - $$$</button>
+            <button class="sorting-button" id="alphabetical-btn">A - Z</button>
+        </div>
+    </div>
+
+
+    <!-- product cards -->
+    <div id="cards"></div>
+
+
+    <!-- jQuery Link -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Swiper JS Link -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Custom JS Link -->
     <script src="/script.js"></script>
 </body>
+
 </html>
