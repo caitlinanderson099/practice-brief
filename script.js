@@ -15,7 +15,7 @@ const games = [
         date: "04/04/2000",
         images: ["/img/games/sims1-game(1).webp", "/img/games/sims1-game(2).webp", "/img/games/sims1-game(3).webp"],
         description: "lorem lorem lorem",
-        category: "Game Franchise"
+        category: "Base Game"
 
     },
     {
@@ -25,7 +25,7 @@ const games = [
         date: "14/09/2004",
         images: ["/img/games/sims2-game(1).webp", "/img/games/sims2-game(2).webp", "/img/games/sims2-game(3).webp"],
         description: "lorem lorem lorem",
-        category: "Game Franchise"
+        category: "Base Game"
     },
     {
         id: 3,
@@ -34,7 +34,7 @@ const games = [
         date: "02/06/2009",
         images: ["/img/games/sims3-game(1).webp", "/img/games/sims3-game(2).webp", "/img/games/sims3-game(3).webp"],
         description: "lorem lorem lorem",
-        category: "Game Franchise"
+        category: "Base Game"
     },
     {
         id: 4,
@@ -43,13 +43,13 @@ const games = [
         date: "02/09/2014",
         images: ["/img/games/sims4-game(1).webp", "/img/games/sims4-game(2).webp", "/img/games/sims4-game(3).webp"],
         description: "lorem lorem lorem",
-        category: "Game Franchise",
+        category: "Base Game",
     },
 
     // SECOND ROW - Sims Packs (two expansions for sims 3 and sims 4)
     {
         id: 5,
-        name: "The Sims 3 Late Night Expansion Pack",
+        name: "The Sims 3 Late Night",
         price: "$19.99",
         date: "10/10/2010",
         images: ["/img/expansion/sims3-latenight-expansion(1).webp", "/img/expansion/sims3-latenight-expansion(2).webp", "/img/expansion/sims3-latenight-expansion(3).webp"],
@@ -58,7 +58,7 @@ const games = [
     },
     {
         id: 6,
-        name: "The Sims 4 Get To Work Expansion Pack",
+        name: "The Sims 4 Get To Work",
         price: "$39.99",
         date: "30/03/2015",
         images: ["/img/expansion/sims4-get-to-work-expansion(1).webp", "/img/expansion/sims4-get-to-work-expansion(2).webp", "/img/expansion/sims4-get-to-work-expansion(3).webp"],
@@ -67,7 +67,7 @@ const games = [
     },
     {
         id: 7,
-        name: "The Sims 3 Seasons Expansion Pack",
+        name: "The Sims 3 Seasons",
         price: "$19.99",
         date: "13/11/2012",
         images: ["/img/expansion/sims3-seasons-expansion(1).webp", "/img/expansion/sims3-seasons-expansion(2).webp", "/img/expansion/sims3-seasons-expansion(3).webp"],
@@ -76,7 +76,7 @@ const games = [
     },
     {
         id: 8,
-        name: "The Sims 4 For Rent Expansion Pack",
+        name: "The Sims 4 For Rent",
         price: "$49.95",
         date: "07/12/2023",
         images: ["/img/expansion/sims4-for-rent-expansion(1).webp", "/img/expansion/sims4-for-rent-expansion(2).webp", "/img/expansion/sims4-for-rent-expansion(3).webp"],
@@ -278,8 +278,9 @@ function populateCards(filteredResults) {
                     <div class="game-details">
                         <div class="more-details">
                         <h2>${game.name}</h2>
-                        <p>${game.category} ${game.date}</p>
-                        <h4>${game.price}</h4>
+                        <h3>${game.category} </h3> 
+                        </p>${game.date}</p>
+                        <div class="price-add"> <button> <i class="fa-solid fa-cart-plus"></i> </button> <h4> ${game.price}</h4> </div>
                         </div>
                     </div>
                     
