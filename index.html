@@ -4,11 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Mapbox CSS -->
+     <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
     <!-- Swiper CSS Link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- Custom CSS Link -->
     <link rel="stylesheet" href="/style.css">
-    <title> Put It All Together Brief </title>
+    <!-- Browser Tab Icon -->
+    <link rel="shortcut icon" href="/img/site-logo.webp" type="image/x-icon">
+    <title> The Sims Video Game Catalogue </title>
 </head>
 
 <body>
@@ -16,11 +20,11 @@
     <nav>
         <div class="navbar">
             <div class="nav-items">
-                <div class="logo-cont"></div>
+               <button class="logo" href="#home"></button>
 
-                <a href="#"> Home </a>
-                <a href="#"> Catalogue </a>
-                <a href="#"> About Us </a>
+                <a href="#home"> Home </a>
+                <a href="#filterContainer"> Catalogue </a>
+                <a href="#shopLocations"> Shop Locations </a>
 
                 <!-- cart icon -->
                 <div class="cart">
@@ -32,13 +36,13 @@
 
 
     <!-- info text -->
-    <header>
+    <header id="home">
         <h1> The Sims Video Game Franchise </h1>
         <h2> Browse a range of Sims Games and Add-ons </h2>
     </header>
 
     <!-- filter buttons -->
-    <div class="filter-container">
+    <div class="filter-container" id="filterContainer">
 
         <!-- Game Franchise filter -->
         <div class="filter">
@@ -60,7 +64,7 @@
             <select name="category" id="category" class="full-width-select">
                 <!-- Options for the select as well as the value -->
                 <option value=""> All </option>
-                <option value="Games"> Base Games </option>
+                <option value="Base Games"> Base Games </option>
                 <option value="Expansion Packs"> Expansion Packs </option>
                 <option value="Add-ons"> Add-ons </option>
             </select>
@@ -74,8 +78,18 @@
             <select name="date" id="date" class="full-width-select">
                 <!-- Options for the select as well as the value -->
                 <option value=""> All </option>
-                <option value="2000 - 2010"> 2000 - 2010 </option>
-                <option value="2012 - 2023"> 2012 - 2023 </option>
+                <option value="2000"> 2000 </option>
+                <option value="2004"> 2004 </option>
+                <option value="2009"> 2009 </option>
+                <option value="2010"> 2010 </option>
+                <option value="2012"> 2012 </option>
+                <option value="2013"> 2013 </option>
+                <option value="2014"> 2014 </option>
+                <option value="2015"> 2015 </option>
+                <option value="2016"> 2016 </option>
+                <option value="2018"> 2018 </option>
+                <option value="2023"> 2023 </option>
+               
             </select>
         </div>
 
@@ -106,15 +120,23 @@
 
 
     <!-- about us section (this includes the mapbox) -->
-    <div id="aboutus">
-        <h2> About Us </h2>
+    <div class="shop-locations">
+        <h2 id="shopLocations"> Shop Locations </h2>
+
+        <div class="buttons">
+            <!-- dynamically created using js -->
+        </div>
+
+         <div id="map">
+        <!-- created using js -->
+        </div>
     </div>
 
 
 
+
     <!-- ------------ MODAL HTML ----------- -->
-    <!-- add modals for cards JUST NEEDS IMAGE TO WORK AND BE STYLED-->
-    <!-- add modals for the 'add to cart' confirmation popup (just maybe have a cart icon and a check tick)  TO BE COMPLETED-->
+    <!-- add modals for cards -->
 
      <!-- Pop Up Modal (should always be at the bottom of html)  -->
      <dialog id="detailsModal">
@@ -123,20 +145,12 @@
             <!-- populated via javascript -->
         </div>
     </dialog>
-
-    <!-- modal for when user clicks cart icon -->
-    <dialog id="addModal">
-        <button id="closeModal"> <i class="fa-solid fa-xmark"></i> </button>
-        <div class="addmodal-content">
-            <!-- populated via javascript -->
-        </div>
-    </dialog>
-
-
     <!-- end of modal html -->
 
 
   
+     <!-- Mapbox JS -->
+     <script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
     <!-- Swiper JS Link -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Font Awesome Link -->
