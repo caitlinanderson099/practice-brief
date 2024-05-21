@@ -4,8 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- jQuery CSS Link -->
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.3/themes/smoothness/jquery-ui.css">
     <!-- Swiper CSS Link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- Custom CSS Link -->
@@ -18,52 +16,53 @@
 
     <!-- info text -->
     <header>
-        <h1> Pop Figures! </h1>
+        <h1> The Sims Video Game Franchise </h1>
     </header>
 
     <!-- filter buttons -->
     <div class="filter-container">
 
-        <!-- Company filter -->
+        <!-- Game Franchise filter -->
         <div class="filter">
-            <label for="company"> Company: </label>
-            <select name="company" id="company" class="full-width-select">
+            <label for="game"> Game Franchise: </label>
+            <select name="game" id="game" class="full-width-select">
                 <!-- Options for the select as well as the value -->
                 <option value=""> All </option>
-                <option value="Disney"> Disney </option>
-                <option value="DreamWorks"> DreamWorks </option>
-                <option value="Pixar"> Pixar </option>
+                <option value="The Sims"> The Sims </option>
+                <option value="The Sims 2"> The Sims 2 </option>
+                <option value="The Sims 3"> The Sims 3 </option>
+                <option value="The Sims 4"> The Sims 4 </option>
             </select>
         </div>
 
 
-         <!-- Franchise filter -->
+         <!-- Category filter -->
          <div class="filter">
-            <label for="franchise"> Franchise: </label>
-            <select name="franchise" id="franchise" class="full-width-select">
+            <label for="category"> Category: </label>
+            <select name="category" id="category" class="full-width-select">
                 <!-- Options for the select as well as the value -->
                 <option value=""> All </option>
-                <option value="Disney"> The Little Mermaid </option>
-                <option value="DreamWorks"> Shrek </option>
-                <option value="Pixar"> Inside Out 2 </option>
+                <option value="Games"> Games </option>
+                <option value="Expansion Packs"> Expansion Packs </option>
+                <option value="Add-ons"> Add-ons </option>
             </select>
         </div>
 
 
-         <!-- third filter -->
-         <!-- <div class="filter">
-            <label for="franchise"> Franchise: </label>
-            <select name="franchise" id="franchise" class="full-width-select">
-                Options for the select as well as the value -->
-                <!-- <option value=""> All </option>
-                <option value="Disney"> The Little Mermaid </option>
-                <option value="DreamWorks"> Shrek </option>
-                <option value="Pixar"> Inside Out 2 </option>
+        
+         <!-- Date filter -->
+         <div class="filter">
+            <label for="date"> Release Date: </label>
+            <select name="date" id="date" class="full-width-select">
+                <!-- Options for the select as well as the value -->
+                <option value=""> All </option>
+                <option value="2000 - 2010"> 2000 - 2010 </option>
+                <option value="2012 - 2023"> 2012 - 2023 </option>
             </select>
-        </div> --> 
+        </div>
 
-    </div>
-
+ <!-- end of filter cont -->
+</div>
 
 
     <!-- Sorting buttons -->
@@ -75,14 +74,17 @@
             <button class="sorting-button" id="alphabetical-btn">A - Z</button>
         </div>
     </div>
+    <!-- end of sorting buttons -->
 
 
     <!-- product cards -->
-    <div id="cards"></div>
+    <div id="cards" class="cards">
+        <!-- populated via js -->
+    </div>
+    <!-- end of products cards -->
 
 
-    <!-- jQuery Link -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  
     <!-- Swiper JS Link -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Custom JS Link -->
