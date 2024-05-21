@@ -46,7 +46,7 @@
             <select name="game" id="game" class="full-width-select">
                 <!-- Options for the select as well as the value -->
                 <option value=""> All </option>
-                <option value="The Sims"> The Sims </option>
+                <option value="The Sims Online"> The Sims Online </option>
                 <option value="The Sims 2"> The Sims 2 </option>
                 <option value="The Sims 3"> The Sims 3 </option>
                 <option value="The Sims 4"> The Sims 4 </option>
@@ -60,7 +60,7 @@
             <select name="category" id="category" class="full-width-select">
                 <!-- Options for the select as well as the value -->
                 <option value=""> All </option>
-                <option value="Games"> Games </option>
+                <option value="Games"> Base Games </option>
                 <option value="Expansion Packs"> Expansion Packs </option>
                 <option value="Add-ons"> Add-ons </option>
             </select>
@@ -100,6 +100,33 @@
         <!-- populated via js -->
     </div>
     <!-- end of products cards -->
+
+
+
+
+
+    <!-- ------------ MODAL HTML ----------- -->
+    <!-- add modals for cards -->
+    <!-- add modals for the 'add to cart' confirmation popup (just maybe have a cart icon and a check tick) -->
+
+     <!-- Pop Up Modal (should always be at the bottom of html)  -->
+     <dialog id="detailsModal">
+        <button id="closeModal"> <i class="fa-solid fa-xmark"></i> </button>
+        <div class="modal-content">
+            <!-- populated via javascript -->
+        </div>
+    </dialog>
+
+    <!-- modal for when user clicks cart icon -->
+    <dialog id="addModal">
+        <button id="closeModal"> <i class="fa-solid fa-xmark"></i> </button>
+        <div class="addmodal-content">
+            <!-- populated via javascript -->
+        </div>
+    </dialog>
+
+
+    <!-- end of modal html -->
 
 
   

@@ -10,7 +10,7 @@ const games = [
     // FIRST ROW - Sims Games
     {
         id: 1,
-        name: "The Sims",
+        name: "The Sims Online",
         price: "$0.00",
         date: "04/04/2000",
         images: ["/img/games/sims1-game(1).webp", "/img/games/sims1-game(2).webp", "/img/games/sims1-game(3).webp"],
@@ -95,11 +95,11 @@ const games = [
     },
     {
         id: 10,
-        name: "The Sims 4 Dine Out",
+        name: "The Sims 4 Tiny Living",
         price: "$29.95",
         // change to just the year 
         date: "07/06/2016",
-        images: ["/img/addons/sims4-dine-out-addon(1).webp", "/img/addons/sims4-dine-out-addon(2).webp", "/img/addons/sims4-dine-out-addon(3).webp"],
+        images: ["/img/addons/sims4-tiny-living-addon(1).webp", "/img/addons/sims4-tiny-living-addon(2).webp", "/img/addons/sims4-tiny-living-addon(3).webp"],
         description: "lorem lorem lorem",
         category: "Add-ons"
 
@@ -288,6 +288,7 @@ function populateCards(filteredResults) {
                 </div>
              `;
             resultsDiv.innerHTML += gameCardHTML;
+            attachModalToImages(); // attaching event listeners straight after population
 
             // Re-initialize Swiper Instances
             const swipers = document.querySelectorAll('.swiper');
@@ -306,6 +307,96 @@ function populateCards(filteredResults) {
         });
     };
 }
+
+
+/** ------------- MODAL FUNCTIONS ------------ */
+
+// this is attaching a click event to each card and opens the modal
+function attachModalToImages() {
+    // first step, grab all the images of the cards
+    const imageS = document.querySelectorAll('.game-image');
+    // second step, get the details modal from the html
+    const detailsModal = document.getElementById('detailsModal');
+
+    // third step, run a for loop over the images array to add the click event to each image
+    for (let i = 0; i < imageS.length; i++) {
+        imageS[i].addEventListener('click', function(event) {
+            const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+            detailsModal.dataset.scrollPosition = scrollPosition // this stores the scroll position in the modal's dataset (smart modal hehe)
+            const rect = event.target.getBoundingClientRect(); // this is letting the coder know that it is going to get the position of the clicked image, relative to the viewport
+            const imageTop = rect.top + scrollPosition; // this calculates the top position of the clicked image
+            const windowHeight = window.innerHeight;
+            const dialogHeight = detailsModal.offsetHeight // this is the height of the modal
+            const viewportTop = scrollPosition;
+
+            let dialogTop = viewportTop + (windowHeight - dialogHeight) / 2; // this will calculate the top position
+
+            //  these lines of code above are defining the scroll position for the modal
+
+            // this is to ensure that the dialog doesn't go above or below the device viewport
+            if (dialogTop < imageTop) {
+                dialogTop = imageTop; // this places the dialog just below the clicked image, if there is enough space for it
+            } else if (dialogTop + dialogHeight > windowHeight + viewportTop){
+                dialogTop = windowHeight + viewportTop - dialogHeight; // this will place the dialog at the bottom of the device viewport if there was enough space (if the statement above is false)
+            };
+
+            detailsModal.style.top = dialogTop + 'px'; // this sets the top position of the dialog
+
+            console.log('image click is working');
+            detailsModal.showModal(); // this will open the modal when images are clicked
+            document.body.classList.add('modal-open'); // this adds the class to disable any scrolling
+            // add the close function
+            closeDetailsModal();
+            // this populates the modal with the correct information
+            console.log(event.target.getAttribute('value')); 
+            populateModal(event.target.getAttribute('value'));
+        });
+    };
+};
+
+// Closing Modal Function
+function closeDetailsModal() {
+    // first step, grab the close button of modal from html
+    const close = document.getElementById('closeModal');
+    // second step, grab the modal
+    const detailsModal = document.getElementById('detailsModal');
+
+    // third step, add the click event onto the close modal, to close the modal
+    close.addEventListener('click', function () {
+        detailsModal.close();
+        document.body.classList.remove('modal-open'); // this removes the 'scroll lock' that we placed above
+        const scrollPosition = detailsModal.dataset.scrollPosition || 0;
+        window.scrollTo(0, scrollPosition);
+    });
+};
+
+// population of the modal
+function populateModal(imagesId) {
+    // first step, grab the modal
+    const detailsModal = document.querySelector('.modal-content');
+
+     // Get the game object based on imagesId
+     const game = games.find(game => game.id === parseInt(imagesId));
+
+     // Create HTML for images
+     const imagesHTML = game.images.map((imageUrl, index) => `
+         <img src="${imageUrl}" alt="${game.name} image ${index + 1}" class="modal-image">
+     `).join('');
+
+    // the content within the modal
+    detailsModal.innerHTML = `
+         
+        ${imagesHTML}
+        <h2>${games[imagesId - 1].name}</h2>
+        <p>${games[imagesId - 1].category}</p>
+        <p>${games[imagesId - 1].date}</p>
+        <p class="game-description">${games[imagesId - 1].description}</p>
+        <div class="modal-price">
+            <h4>${games[imagesId - 1].price}</h4>
+        </div>
+        <button class="purchase-button"> Add To Cart </button>
+    `;
+} ;
 
 
 
