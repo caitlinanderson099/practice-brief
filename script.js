@@ -52,7 +52,7 @@ const games = [
         name: "The Sims 3 Late Night Expansion Pack",
         price: "$19.99",
         date: "10/10/2010",
-        images: ["/img/expansion/sims3-latenight-expansion(1).webp", "/img/games/sims3-latenight-expansion(2).webp", "/img/games/sims3-latenight-expansion(3).webp"],
+        images: ["/img/expansion/sims3-latenight-expansion(1).webp", "/img/expansion/sims3-latenight-expansion(2).webp", "/img/expansion/sims3-latenight-expansion(3).webp"],
         description: "lorem lorem lorem",
         category: "Expansion Pack",
     },
@@ -70,7 +70,7 @@ const games = [
         name: "The Sims 3 Seasons Expansion Pack",
         price: "$19.99",
         date: "13/11/2012",
-        images: ["/img/expansion/sims3-seasons-expansion(1).webp", "/img/expansion/sims3-seasons-expansion(1).webp", "/img/expansion/sims3-seasons-expansion(1).webp"],
+        images: ["/img/expansion/sims3-seasons-expansion(1).webp", "/img/expansion/sims3-seasons-expansion(2).webp", "/img/expansion/sims3-seasons-expansion(3).webp"],
         description: "lorem lorem lorem",
         category: "Expansion Pack"
     },
@@ -79,7 +79,7 @@ const games = [
         name: "The Sims 4 For Rent Expansion Pack",
         price: "$49.95",
         date: "07/12/2023",
-        images: ["/img/expansion/sims4-for-rent-expansion(1).webp", "/img/expansion/sims4-for-rent-expansion(1).webp", "/img/expansion/sims4-for-rent-expansion(1).webp"],
+        images: ["/img/expansion/sims4-for-rent-expansion(1).webp", "/img/expansion/sims4-for-rent-expansion(2).webp", "/img/expansion/sims4-for-rent-expansion(3).webp"],
         description: "lorem lorem lorem",
         category: "Expansion Pack"
     },
