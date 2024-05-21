@@ -97,6 +97,7 @@ const games = [
         id: 10,
         name: "The Sims 4 Dine Out",
         price: "$29.95",
+        // change to just the year 
         date: "07/06/2016",
         images: ["/img/addons/sims4-dine-out-addon(1).webp", "/img/addons/sims4-dine-out-addon(2).webp", "/img/addons/sims4-dine-out-addon(3).webp"],
         description: "lorem lorem lorem",
