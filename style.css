@@ -11,9 +11,49 @@
 /* REMINDER: STYLE THE NAVBAR */
 /* Navigation Bar */
 nav {
-    background-color: green;
+    background-color: #1c1919;
     width: 100%;
-    height: 50px;
+    padding: 10px 30px;
+
+    .nav-items {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        justify-content: space-between;
+
+        a {
+            font-size: 1.5rem;
+            font-family: "Lilita One", sans-serif;
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: #177831;
+            padding: 10px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .cart {
+            font-size: 1.8rem;
+            color: white;
+        }
+        
+    }
+
+    .logo-cont {
+        background-image: url(/img/site-logo.webp);
+        width: 50px;
+        height: 50px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 50%;
+    }
 }
 
 /* hero image section */
@@ -51,7 +91,7 @@ header {
     justify-content: space-evenly;
     width: 100%;
     height: 100px;
-    background-color: #0f5121;
+    background-color: #1c1919;
     color: white;
     font-family: "Lilita One", sans-serif;
     font-size: 1.3rem;
@@ -81,7 +121,7 @@ header {
     justify-content: space-evenly;
     width: 100%;
     height: 100px;
-    background-color: #0f5121;
+    background-color: #1c1919;
     color: white;
     font-family: "Lilita One", sans-serif;
     font-size: 1.3rem;
@@ -106,6 +146,9 @@ header {
 }
 
 
+/* about us styling here */
+
+/* about us styling ends */
 
 
 /* the grid display of the cards */
