@@ -468,6 +468,23 @@ locations.forEach((location, index) => {
 });
 
 
+let openHam = document.getElementById ('openHam');
+let closeHam = document.getElementById ('closeHam');                    //note: when using id's always have camel caps & for classes have hyphens//
+let navigationItems = document.getElementById ('nav-items');
+
+// Arrow Function with arguments and parameters //
+
+const hamburgerEvent = (navigation, close, open) => {
+    navigationItems.style.display = navigation;
+    closeHam.style.display = close;
+    openHam.style.display = open;
+};
+
+// Add function to click events with the correct parameters //
+
+openHam.addEventListener ('click', () => hamburgerEvent ("flex", "block", "none"));
+closeHam.addEventListener ('click', () => hamburgerEvent ("none", "none", "block"));
+
 
 
 
